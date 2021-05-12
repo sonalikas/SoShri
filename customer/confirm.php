@@ -25,13 +25,13 @@
 					<a href="Customer_registration.php">Registration</a>
 				</li>
 				<li>
-					<a href="Checkout.php">My Account</a>
+					<a href="../Checkout.php">My Account</a>
 				</li>
 				<li>
-					<a href="cart.php">Cart</a>
+					<a href="../cart.php">Cart</a>
 				</li>
 				<li>
-					<a href="Login.php">Login</a>
+					<a href="../Login.php">Login</a>
 				</li>
 			</ul>
 			
@@ -61,26 +61,26 @@
 		<div class="navbar-collapse collapse" id="navigation">
 			<div class="padding-nav">
 				<ul class="nav navbar-nav navbar-left">
-					<li class="active">
-						<a href="index.php">Home</a>
+					<li >
+						<a href="../index.php">Home</a>
 					</li >
 					<li>
-						<a href="shop.php">Shop</a>
+						<a href="../shop.php">Shop</a>
+					</li>
+					<li class="active">
+						<a href="../my_account.php">My Account</a>
 					</li>
 					<li>
-						<a href="checkout.php">My Account</a>
+						<a href="../cart.php">Shopping Cart</a>
 					</li>
 					<li>
-						<a href="cart.php">Shopping Cart</a>
+						<a href="../about.php">About Us</a>
 					</li>
 					<li>
-						<a href="about.php">About Us</a>
+						<a href="../services.php">Services</a>
 					</li>
 					<li>
-						<a href="services.php">Services</a>
-					</li>
-					<li >
-						<a href="contactus.php">Contact Us</a>
+						<a href="../contactus.php">Contact Us</a>
 					</li>
 				</ul>
 			</div>
@@ -120,60 +120,63 @@
 		<div class="col-md-12">
 			<ul class="breadcrumb">
 				<li><a href="index.php">Home</a></li>
-				<li>Ragistration</li> 
+				<li>My Account</li> 
 				</ul>
 		</div>
-		<div class="col-md-12">
+		<div class="col-md-3">
+			<?php
+			include("includes/sidebar.php");
+			?>
+		</div>
+
+		<div class="col-md-9">
 			<div class="box">
-				<div class="box-header">
-					<center>
-						<h2>Customer Registration</h2>
-						
-					</center>
-				</div>
-				<form action="Customer_registration.php" method="post" enctype="multipart/form-data">
+				<h1 align="center"> Please confirm your payment</h1>
+				<form action="confirm.php" method="post" enctype="multipart/form-data">
 					<div class="form-group">
-						<label>Name</label><input type="text" name="c_name" required="" class="form-control">
+						<label>Invoice Number</label>
+						<input type="text" name="invoice_number" class="form-control" required="">
 					</div>
 					<div class="form-group">
-						<label>Email</label>
-						<input type="email" name="c_email" class="form-control" required="">
-					</div>
-					
-					<div class="form-group">
-						<label>Address</label>
-						<input type="text" name="c_address" class="form-control" required="">
+						<label>Amount</label>
+						<input type="text" name="amount" class="form-control" required="">
 					</div>
 					<div class="form-group">
-						<label>Contact Number</label>
-						<input type="text" name="c_number" class="form-control" required="">
+						<label>select Payment Mode</label>
+						<select class="form-control" name="payment_mode">
+							<option>Bank transfer</option>
+							<option>Paypal</option>
+							<option>PayuMoney</option>
+							<option>PayTm</option>
+							<option>PhonePay</option>
+						</select>
+
+						</div>
+
+						<div class="form-group">
+						<label>Transection Number</label>
+						<input type="text" name="trfr_number" class="form-control" required="">
 					</div>
 					<div class="form-group">
-						<label>Password</label>
-						<input type="password" name="c_password" class="form-control" required="">
+						<label>Payment Date</label>
+						<input type="text" name="date" class="form-control" required="">
 					</div>
-					<div class="form-group">
-						<label>Conform Password</label>
-						<input type="password" name="c_conpassword" class="form-control" required="">
+					<div class="text-center">
+						<button type="submit" name="confirm_payment" class="btn btn-primary btn-lg"> Confirm Payment</button>
 					</div>
-					<div class="form-group">
-						<label>Image</label>
-						<input type="file" name="c_image" class="form-control" required="">
-					</div>
-					
-					<div class="text-center"> <button type="submit" name="submit" class="btn btn-primary">
-						<i class="fa fa-user-md">  Register</i>
-					</button></div>
 				</form>
 			</div>
 		</div>
+
+
+
 
 	</div>
 </div>
 
 
 <?php
-include("includes/footer.php")
+include("includes/sidebar.php");
 ?>
 </body>
 </html>

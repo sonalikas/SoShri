@@ -129,11 +129,49 @@
 			?>
 		</div>
 	<div class="col-md-9">
+		<!-- my order -->
 		<?php 
 		if(isset($_GET['my_order'])){
 		include("my_order.php");
 		}
 		?>
+		<!-- pay offline -->
+		<?php 
+		if(isset($_GET['pay_offline'])){
+		include("pay_offline.php");
+		}
+		?>
+		<!-- My address -->
+		<?php 
+		if(isset($_GET['my_address'])){
+		include("my_address.php");
+		}
+		?>
+		<!-- Edit Account -->
+		<?php 
+		if(isset($_GET['edit_account'])){
+		include("edit_account.php");
+		}
+		?>
+
+		<!-- change password -->
+		<?php
+		if(isset($_GET['change_password'])){
+		include("change_password.php");
+	}
+		?>
+		<!-- my wishlist -->
+		<?php 
+		if(isset($_GET['my_wishlist'])){
+		include("my_wishlist.php");
+	}
+		?>
+		<!-- delete account -->
+		<?php
+		if(isset($_GET['delete_account'])){
+		include("delete_account.php");
+	}
+	 ?>
 	</div>
 
 
